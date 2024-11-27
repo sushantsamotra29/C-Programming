@@ -1,21 +1,20 @@
-//WAP to find the sum of all the elements of an array.
-#include<stdio.h>
-int main()
-{
-    system("cls");
-    int n;
-    printf("Enter the size of an Array : ");
-    scanf("%d",&n);
-    int marks[n];
-    printf("Enter %d elements : ",n);
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&marks[i]);
+#include <stdio.h>
+
+int main() {
+    int a, b = 2, i = 0;
+    printf("Enter Number: ");
+    scanf("%d", &a);
+
+    while (b <= a / 2) {
+        if (a % b == 0)
+            i++;
+        b++;
     }
-    printf("Array Elements are : ");
-    for(int i=n-1; i>=0;i--)     // or the expression can be i>-1
-    {
-        printf("%d ",marks[i]);
-    }
-        return 0;
-}                  
+
+    if (i == 0)
+        printf("%d is a prime number\n", a);
+    else
+        printf("%d is not a prime number\n", a);
+
+    return 0;
+}

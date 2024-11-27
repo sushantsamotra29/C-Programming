@@ -1,21 +1,28 @@
+#include <stdio.h>
 
-#include<stdio.h>
-int main()               
-{
-    system("cls");
-    int n;
-    printf("ENter array size : ");
-    scanf("%d",&n);
-    int marks[n];    //these type of array cannot be intitialized in the same line
-    printf("Enter %d elements : ",n);
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&marks[i]);
+int main() {
+    int n, num, max;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input! The number of terms must be greater than zero.\n");
+        return 1;
     }
-    printf("Array Elements are : ");
-    for(int i=0; i<n;i++)
-    {
-        printf("%d ",marks[i]);
+
+    printf("Enter number 1: ");
+    scanf("%d", &max);  // Initialize max with the first number
+
+    for (int i = 1; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &num);
+
+        if (num > max) {
+            max = num;
+        }
     }
-        return 0;
-}                  
+
+    printf("The maximum number is: %d\n", max);
+    return 0;
+}

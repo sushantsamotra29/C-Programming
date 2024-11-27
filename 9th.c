@@ -1,31 +1,85 @@
-//COPY the data of the one array to the another        [for this we need two array of same size]
-#include<stdio.h>
+/*#include<stdio.h>
+#include<math.h>
 int main()
 {
-    system("cls");
-    int n;
-    printf("Enter the size of an Array : ");
-    scanf("%d",&n);
-    int arr1[n],arr2[n];
-    printf("Enter %d elements : ",n);
-    for(int i=0;i<n;i++)
+    int num,sum=0;
+    printf("Enter a Number: ");
+    scanf("%d",&num);
+    int temp=num;
+    int digits = (int)log10(num)+1;
+    while(num!=0)
     {
-        scanf("%d",&arr1[i]);
+        int rem=num%10;
+        sum=sum+(int)pow(rem,digits);
+        num=num/10;
     }
-    //logic to copy data form one array to another
-    for(int i=0; i<n;i++) 
-    {
-        arr2[i]=arr1[1];
+if(temp==sum)
+    printf("Number is Armstrong");
+    else
+    printf("Number is not Armstrong");
+    return 0;
+}*/
+/*
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a Number: ");
+    scanf("%d", &num);
+
+    int temp = num;
+    int digits = (int)log10(num) + 1;  // Calculate the number of digits
+
+    while (num != 0) {
+        int rem = num % 10;
+        sum = sum + (int)pow(rem, digits);  // Add the digit raised to the power of digits
+        num = num / 10;
     }
-    printf("Elements of array-1 are : \n");
-    for (int i=0; i<n;i++)
-    {
-        printf("%d",arr1[i]);
+
+    if (temp == sum)
+        printf("Number is Armstrong");
+    else
+        printf("Number is not Armstrong");
+
+    return 0;
+}
+*/
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a Number: ");
+    scanf("%d", &num);
+
+    int temp = num;
+    int digits = 0;
+
+    // Calculate the number of digits
+    int temp_num = num;
+    while (temp_num != 0) {
+        temp_num /= 10;
+        digits++;
     }
-    printf("Elements of Array 2 ",);
-    for(int i=0;i<n;i++)
-    {
-        
+
+    // Calculate the sum of each digit raised to the power of 'digits'
+    while (num != 0) {
+        int rem = num % 10;
+        int power = 1;
+
+        // Calculate rem^digits without using pow()
+        for (int i = 0; i < digits; i++) {
+            power *= rem;
+        }
+
+        sum += power;
+        num /= 10;
     }
-        return 0;
+
+    if (temp == sum)
+        printf("Number is Armstrong\n");
+    else
+        printf("Number is not Armstrong\n");
+
+    return 0;
 }

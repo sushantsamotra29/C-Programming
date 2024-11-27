@@ -1,30 +1,23 @@
-#include<stdio.h>
-int main() {
-    int number, digit, temp, count;
+#include <stdio.h>
 
-    printf("Enter an integer: ");
-    scanf("%d", &number);
-    if (number < 0) 
-    {
-        number = -number;
-    }
-    printf("Digit Frequency:\n");
-    for (int d = 0; d <= 9; d++) {
-        temp = number;  
-        count = 0;
-        while (temp > 0) 
-        {
-            digit = temp % 10;  
-            if (digit == d) 
-            {
-                count++;        
-            }
-            temp /= 10;        
+int main() {
+    int n, first = 0, second = 1, next, i;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+    for (i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;  // The first two terms are 0 and 1
+        } else {
+            next = first + second;  // Calculate the next term
+            first = second;         // Update first to the previous second
+            second = next;          // Update second to the current next
         }
-        if (count > 0) 
-        {
-            printf("Frequency of %d: %d\n", d, count);
-        }
+        printf("%d ", next);
     }
-        return 0;
+    printf("\n");
+
+    return 0;
 }
