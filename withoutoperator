@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+    float radius, area, perimeter;
+    printf("ENter Radius ");
+    scanf("%f" ,&radius);
+    printf("Area of Circle = %f\nPerimeter of Circle = %f" ,3.141*radius*radius,2*3.141*radius);
+    return 0;
+}

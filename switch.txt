@@ -1,0 +1,22 @@
+int choice;
+printf("1. Are of circle\n");
+printf("2. Area of Square\n");
+printf("3. Are of rectangle\n");
+pritnf("Enter your choice : ");
+scanf(%d" ,&choice);
+switch(choice)
+{
+    case1:
+        //Here write code to find the are of circle
+        break;
+    case2;
+        //Here write code to find the are of Square
+        break;
+    case3;
+        //Here write code to find the are of circle
+        break;
+    default:
+        printf("Invalid Choice !!!!!");
+}
+return 0;   
+}
